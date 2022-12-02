@@ -38,8 +38,10 @@ async function main(round) {
     if(!round.returnCurrentCard()) {
       round.endRound();
     } else {
-      main(round);
+      await main(round);
     }
+
+    return Promise.resolve(true)
 }
 
 module.exports.main = main;
